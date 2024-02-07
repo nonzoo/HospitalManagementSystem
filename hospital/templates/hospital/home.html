@@ -13,12 +13,14 @@
                 </h3>
 
                 <p><i class="fas fa-home"></i> Location: {{ hospital.address }}</p>
-                <p><i class="fa fa-phone"></i> Contact: {{ hospital.phone_number }}</p>
+
+                <p><i class="fa fa-phone"></i> Contact:<a href="tel:{{ hospital.phone_number }}">  {{ hospital.phone_number }}</a></p>
+                
                 <div id="moreContent{{hospital.id}}" style="display: none;">
-                <p><i class="fa fa-envelope"></i> Email:{{hospital.email}}</p>
+                <p><i class="fa fa-envelope"></i>Email:<a href="mailto:{{hospital.email}}"> {{hospital.email}}</a></p>
 
                 {% if hospital.website %}
-                <p><i class="fa fa-globe"></i><a href=""> Website: {{hospital.website}}</a></p>
+                <p><i class="fa fa-globe"></i> Website:<a href=""> {{hospital.website}}</a></p>
                 {% endif %}
 
                 <p><i class="fa fa-bed"></i> Capacity : {{hospital.capacity}}</p>
