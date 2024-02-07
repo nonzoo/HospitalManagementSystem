@@ -1,0 +1,42 @@
+{% extends 'hospital/base.html' %}
+
+
+
+{% block content %}
+    <div>
+        <h1>Featured Hospitals</h1>
+        {% for hospital in hospitals %}
+            <div class="hospital-card">
+
+                <h3><i class="fa fa-hospital cap"></i>
+                  {{ hospital.name }}
+                </h3>
+
+                <p><i class="fas fa-home"></i> Location: {{ hospital.address }}</p>
+                <p><i class="fa fa-phone"></i> Contact: {{ hospital.phone_number }}</p>
+                <div id="moreContent{{hospital.id}}" style="display: none;">
+                <p><i class="fa fa-envelope"></i> Email:{{hospital.email}}</p>
+
+                {% if hospital.website %}
+                <p><i class="fa fa-globe"></i><a href=""> Website: {{hospital.website}}</a></p>
+                {% endif %}
+
+                <p><i class="fa fa-bed"></i> Capacity : {{hospital.capacity}}</p>
+            </div>
+            <button onclick="showMore('{{hospital.id}}')">show more</button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+    function showMore(hospitalId) {
+    var moreContent = document.getElementById("moreContent" + hospitalId);
+
+    if (moreContent.style.display === "none" || moreContent.style.display === "") {
+      moreContent.style.display = "inline";
+    } else {
+      moreContent.style.display = "none";
+    }
+  }
+    </script>
+{% endblock %}

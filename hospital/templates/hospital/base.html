@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hospital Management System{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color: rgb(39, 38, 38);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: rgb(63, 60, 60);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        main {
+            padding: 20px;
+        }
+        div button{
+            color: black;
+            border: 0px;
+            background-color: white;
+            text-decoration: underline;
+        }
+
+        div a {
+            text-decoration: none;
+        }
+        footer {
+            background-color: #3b3737;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            bottom: 0;
+            width: 100%;
+            position: fixed;
+        }
+
+        h3  {
+            text-transform: uppercase;
+            }
+    </style>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<header>
+    <h1>{% block header %}Hospital Management System{% endblock %}</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<main>
+    {% block content %}
+    
+    {% endblock %}
+</main>
+<footer>
+    &copy; 2024 Hospital Management System
+</footer>
+
+</body>
+
+
+</html>
