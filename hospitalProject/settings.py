@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-!_kiwt8g4gfyyvfbx89lw0k4o7_3c5be+p=2llak^*p!^wyrnf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 GRAPHENE = {
     'GRAPHIQL_TEMPLATE_FILE': 'graphene/graphiql.html',
